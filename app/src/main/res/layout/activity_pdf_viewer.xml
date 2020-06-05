@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".notes.PDFViewer">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:menu="@menu/home_button"
+        android:background="@color/colorPrimary"
+        style="@android:style/ThemeOverlay.Material.Dark.ActionBar"
+        app:titleTextColor="@color/colorAccent"
+        app:title="Test"/>
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfViewer"
+        android:layout_below="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/download_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16sp"
+            android:elevation="5sp"
+            android:src="@drawable/ic_cloud_download"
+            app:fab_showShadow="true"
+            app:fab_size="normal" />
+
+</RelativeLayout>

@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".attendancemanager.AttendanceManager"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:fitsSystemWindows="true"
+        android:background="@color/colorPrimary">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:expandedTitleGravity="center_horizontal"
+            app:collapsedTitleGravity="start"
+            android:textAlignment="textStart"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="Attendance">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="pin"
+                app:contentInsetStart="125dp"
+                app:menu="@menu/home_button"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_marginTop="-20sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:id="@+id/attendanceList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="16sp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:background="@color/colorPrimary"/>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/computer_networking"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="-60sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/computer_networking"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/heal_the_world"
+                            android:id="@+id/computer_networking_text"/>
+
+                        <TextView
+                            android:id="@+id/computer_networking_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/computer_networking_text"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/computer_networking_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/computer_networking_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="18sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/dbms"
+                                android:contentDescription="@string/database_management_system" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/artificial_intelligence"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:gravity="center|start"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/artificial_intelligence"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:id="@+id/artificial_intelligence_text"/>
+
+                        <TextView
+                            android:id="@+id/artificial_intelligence_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/artificial_intelligence_text"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/artificial_intelligence_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/artificial_intelligence_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="18sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/artificial_intelligence"
+                                android:contentDescription="@string/artificial_intelligence" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/database_management_system"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/database_management_system"
+                            android:textSize="19sp"
+                            android:textStyle="bold"
+                            android:id="@+id/database_management_system_text"/>
+
+                        <TextView
+                            android:id="@+id/database_management_system_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/database_management_system_text"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/database_management_system_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/database_management_system_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="15sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/dbms"
+                                android:contentDescription="@string/database_management_system" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/computer_graphics"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/computer_graphics"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:id="@+id/computer_graphics_text"/>
+
+                        <TextView
+                            android:id="@+id/computer_graphics_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/computer_graphics_text"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/computer_graphics_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/computer_graphics_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="18sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/compuer_graphics"
+                                android:background="@drawable/image_back_ground_green"
+                                android:contentDescription="@string/computer_graphics" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/labs"
+                android:layout_marginStart="20sp"/>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/computer_graphics_lab"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/computer_graphics_lab"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:id="@+id/computer_graphics_lab_text"/>
+
+                        <TextView
+                            android:id="@+id/computer_graphics_lab_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/computer_graphics_lab_text"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/computer_graphics_lab_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/computer_graphics_lab_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="15sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/graphics_lab"
+                                android:contentDescription="@string/computer_graphics_lab" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/database_management_system_lab"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/database_management_system_lab"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:id="@+id/database_management_system_lab_text"/>
+
+                        <TextView
+                            android:id="@+id/database_management_system_lab_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/database_management_system_lab_text"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/database_management_system_lab_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/database_management_system_lab_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="16sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/dbms_lab"
+                                android:background="@drawable/image_back_ground_green"
+                                android:contentDescription="@string/database_management_system_lab" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/professional_electives"
+                android:layout_marginStart="20sp"/>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/software_architecture_and_testing"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/software_architecture_and_testing"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:id="@+id/software_architecture_and_testing_text"/>
+
+                        <TextView
+                            android:id="@+id/software_architecture_and_testing_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/software_architecture_and_testing_text"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/software_architecture_and_testing_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/software_architecture_and_testing_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="16sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/software_testing"
+                                android:contentDescription="@string/software_architecture_and_testing" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/probability_and_stochastic_process"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/probability_and_stochastic_process"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:id="@+id/probability_and_stochastic_process_text"/>
+
+                        <TextView
+                            android:id="@+id/probability_and_stochastic_process_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/probability_and_stochastic_process_text"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/probability_and_stochastic_process_prr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/probability_and_stochastic_process_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="15sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="TooManyViews,UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/probability"
+                                android:contentDescription="@string/probability_and_stochastic_process" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/operation_research"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/operation_research"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:id="@+id/operation_research_text"/>
+
+                        <TextView
+                            android:id="@+id/operation_research_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/operation_research_text"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/operation_research_text_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/operation_research_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="18sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/kkk"
+                                android:background="@drawable/image_back_ground_green"
+                                android:contentDescription="@string/operation_research" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/open_electives"
+                android:layout_marginStart="20sp"/>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/advance_j2ee"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:gravity="center|start"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/advance_java_and_j2ee"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:id="@+id/advance_j2ee_text"/>
+
+                        <TextView
+                            android:id="@+id/advance_j2ee_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/advance_j2ee_text"
+                            android:textSize="17sp"/>
+
+                        <TextView
+                            android:id="@+id/advance_j2ee_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/advance_j2ee_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="17sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/java"
+                                android:contentDescription="@string/advance_java_and_j2ee" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/python"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:gravity="center|start"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/python_programming"
+                            android:textSize="21sp"
+                            android:textStyle="bold"
+                            android:id="@+id/python_text"/>
+
+                        <TextView
+                            android:id="@+id/python_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/python_text"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/python_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/python_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="18sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/python"
+                                android:contentDescription="@string/python_programming" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="addAttendance"
+                android:id="@+id/computer_architecture"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginHorizontal="16sp"
+                app:cardCornerRadius="10sp"
+                android:layout_marginBottom="16sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="16sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/computer_organisation_and_architecture"
+                            android:textSize="19sp"
+                            android:textStyle="bold"
+                            android:id="@+id/computer_architecture_text"/>
+
+                        <TextView
+                            android:id="@+id/computer_architecture_per_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/the_attendance_is_0"
+                            android:layout_below="@+id/computer_architecture_text"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/computer_architecture_per"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/computer_architecture_per_text"
+                            android:text="@string/_0_0"
+                            android:textSize="16sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80sp"
+                        android:layout_height="80sp"
+                        android:layout_marginEnd="16sp"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:background="@drawable/image_back_ground_green"
+                            android:gravity="center"
+                            tools:ignore="UselessParent">
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:src="@drawable/asvbnm"
+                                android:background="@drawable/image_back_ground_green"
+                                android:contentDescription="@string/computer_organisation_and_architecture" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

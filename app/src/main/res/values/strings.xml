@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">V ISE</string>
+    <string name="logo_image">This is The UVCE College Logo</string>
+    <string name="uvce">UVCE</string>
+    <string name="v_sem_ise">V - SEM ISE</string>
+    <string name="registration">Registration</string>
+    <string name="name">Name</string>
+    <string name="usn_number">USN Number</string>
+    <string name="register">Register</string>
+    <string name="announcement">Announcement</string>
+    <string name="open_navigation">Open Navigation</string>
+    <string name="close_navigation">Close Navigation</string>
+    <string name="syllabus">Syllabus</string>
+
+    <string name="home">Home</string>
+    <string name="attendance_manager">Attendance Manager</string>
+    <string name="cgpa_calculator">CGPA Calculator</string>
+    <string name="year_schedule">Year Schedule</string>
+
+    <string name="computer_networking">Computer Networking</string>
+    <string name="artificial_intelligence">Artificial Intelligence</string>
+    <string name="computer_graphics">Computer Graphics</string>
+    <string name="computer_graphics_lab">Computer Graphics Lab</string>
+    <string name="database_management_system">Database Management System</string>
+    <string name="database_management_system_lab">Database Management System Lab</string>
+    <string name="software_architecture_and_testing">Software Architecture And Testing</string>
+    <string name="probability_and_stochastic_process">Probability And Stochastic Process</string>
+    <string name="operation_research">Operation Research</string>
+    <string name="advance_java_and_j2ee">Advance Java And J2EE</string>
+    <string name="python_programming">Python Programming</string>
+    <string name="computer_organisation_and_architecture">Computer Organisation And Architecture</string>
+    <string name="professional_electives">Professional Electives</string>
+
+    <string name="message">Message</string>
+    <string name="attach_file">Attach File</string>
+    <string name="send">SEND</string>
+    <string name="announcement_image">Announcement_Image</string>
+    <string name="attach_image">Attach Image</string>
+    <string name="click_to_view_the_file">Click to View the File</string>
+    <string name="click_here">Click Here</string>
+    <string name="choose_a_file">Choose a File</string>
+    <string name="select_subject">Select Subject</string>
+    <string name="upload_notes">Upload Notes</string>
+    <string name="upload">Upload</string>
+    <string name="text">Text</string>
+    <string name="file_name">File Name</string>
+    <string name="open_electives">Open Electives</string>
+    <string name="loading">Loading...</string>
+
+    <string-array name="subject_array">
+        <item>Computer Networking</item>
+        <item>Artificial Intelligence</item>
+        <item>Computer Graphics</item>
+        <item>Computer Graphics Lab</item>
+        <item>Database Management System</item>
+        <item>Database Management System Lab</item>
+        <item>Software Architecture And Testing</item>
+        <item>Probability And Stochastic Process</item>
+        <item>Operation Research</item>
+        <item>Advance Java And J2EE</item>
+        <item>Python Programming</item>
+        <item>Computer Organisation And Architecture</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="this_list_is_empty">This list is empty</string>
+    <string name="calculate">Calculate</string>
+    <string name="the_attendance_is_0">The Attendance is : 0 %</string>
+    <string name="_0_0">0/0</string>
+    <string name="labs">Labs</string>
+    <string name="absent">Absent</string>
+    <string name="present">Present</string>
+    <string name="your_n_attendance_is">Your N Attendance is</string>
+    <string name="subject_name">Subject Name</string>
+    <string name="time_table">Time Table</string>
+    <string name="notes">Notes</string>
+
+</resources>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".register.RegisterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:id="@+id/uvceLogo"
+                android:src="@drawable/uvce_logo"
+                android:layout_weight="1"
+                android:contentDescription="@string/logo_image" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:text="@string/registration"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp"
+                android:layout_weight="2"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@drawable/design_background"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="35sp"
+            android:text="@string/name"
+            android:layout_marginTop="20sp"
+            android:textStyle="bold"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/userNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginTop="0sp"
+            android:layout_marginEnd="30sp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@drawable/button_background"
+            android:autofillHints=""
+            android:inputType="text"
+            android:textSize="25sp"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="35sp"
+            android:layout_marginTop="15sp"
+            android:text="@string/usn_number"
+            android:textStyle="bold"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/usnNameEditText"
+            android:background="@drawable/button_background"
+            android:layout_width="match_parent"
+            android:layout_height="45sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="@color/colorPrimaryDark"
+            tools:ignore="LabelFor"/>
+
+        <Button
+            android:id="@+id/registerButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@drawable/button_background"
+            android:backgroundTint="#210791"
+            android:layout_width="150sp"
+            android:text="@string/register"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="25sp"
+            android:layout_marginEnd="30sp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".4"/>
+
+</LinearLayout>

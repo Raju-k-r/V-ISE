@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10sp"
+    android:layout_marginStart="16sp"
+    android:layout_marginEnd="16sp"
+    android:layout_marginTop="4sp"
+    android:layout_marginBottom="4sp"
+    android:elevation="8sp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/announcement_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"
+            android:fontFamily="@font/acme_regular"
+            android:lineSpacingExtra="2sp"
+            android:paddingHorizontal="16sp"
+            android:paddingTop="16sp"
+            android:paddingBottom="3sp"
+            android:text="@string/announcement"
+            android:textAlignment="textStart"
+            android:textColorLink="@android:color/holo_blue_dark"
+            android:textSize="20sp" />
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/announcement_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/announcement_text"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="2sp"
+            android:layout_marginEnd="16sp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/announcement_image"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:id="@+id/date_and_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/announcement_image"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/fredoka_one_regular"
+            android:gravity="end"
+            android:padding="2sp"
+            android:text="00/00/0000, 00:00 PM"
+            android:textColor="#9A9494"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText,SmallSp" />
+
+        <TextView
+            android:id="@+id/fileAttachFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/announcement_image"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16sp"
+            android:fontFamily="@font/fredoka_one_regular"
+            android:gravity="end"
+            android:padding="2sp"
+            android:text="@string/click_to_view_the_file"
+            android:textColor="#0E2D67"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,SmallSp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

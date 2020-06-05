@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/syllabus"
+        android:icon="@drawable/syllabus"
+        android:title="@string/syllabus" />
+
+    <item
+        android:id="@+id/notes"
+        android:icon="@drawable/ic_insert_drive_file"
+        android:title="@string/notes" />
+
+    <item
+        android:id="@+id/timetable"
+        android:title="@string/time_table"
+        android:icon="@drawable/timetable"/>
+
+    <item
+        android:id="@+id/AttendanceManager"
+        android:icon="@drawable/attendance_logo"
+        android:title="@string/attendance_manager" />
+
+    <item
+        android:id="@+id/CGPACalculator"
+        android:icon="@drawable/calculator"
+        android:title="@string/cgpa_calculator" />
+
+    <item
+        android:id="@+id/yearSchedule"
+        android:icon="@drawable/calendar"
+        android:title="@string/year_schedule" />
+</menu>

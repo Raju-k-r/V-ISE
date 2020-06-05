@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".notes.ListViewClass">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:menu="@menu/home_button"
+        android:background="@color/colorPrimary"
+        style="@android:style/ThemeOverlay.Material.Dark.ActionBar"
+        app:titleTextColor="@color/colorAccent"
+        app:title="Test"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/this_list_is_empty"
+        android:layout_centerInParent="true"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:id="@+id/empty_list"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notes"
+        android:textSize="25sp"
+        android:layout_marginTop="16sp"
+        android:layout_centerHorizontal="true"
+        android:paddingVertical="5sp"
+        android:layout_below="@+id/tool_bar"
+        android:id="@+id/notes_text"
+        android:textStyle="bold"/>
+
+
+    <ListView
+        android:id="@+id/list_View"
+        android:layout_below="@+id/notes_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10sp"/>
+
+</RelativeLayout>
