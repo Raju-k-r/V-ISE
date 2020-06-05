@@ -14,6 +14,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.github.chrisbanes.photoview.PhotoView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.krraju.vise.R;
 import com.krraju.vise.attendancemanager.AttendanceManager;
 import com.krraju.vise.cgpacalculator.CGPACalculator;
@@ -21,8 +23,11 @@ import com.krraju.vise.homescreen.HomeScreen;
 import com.krraju.vise.notes.NotesActivity;
 import com.krraju.vise.syllabus.Syllabus;
 import com.krraju.vise.yearshedule.YearSchedule;
+import com.squareup.picasso.Picasso;
 
 public class TimeTable extends AppCompatActivity {
+
+    private FirebaseRemoteConfig config;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +35,25 @@ public class TimeTable extends AppCompatActivity {
         setContentView(R.layout.activity_time_table);
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        PhotoView photoView = findViewById(R.id.timetable);
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         NavigationView navigationView = findViewById(R.id.navigation_view);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout, toolbar,R.string.open_navigation, R.string.close_navigation);
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+
+        config = FirebaseRemoteConfig.getInstance();
+        FirebaseRemoteConfigSettings settings = new FirebaseRemoteConfigSettings.Builder()
+                                                    .setMinimumFetchIntervalInSeconds(3600)
+                                                    .build();
+
+        config.setConfigSettingsAsync(settings);
+
+
+        config.fetch(0)
+                .addOnSuccessListener(this, aVoid -> {
+                    config.activateFetched();
+                    updateImage();
+                });
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()) {
@@ -72,19 +90,13 @@ public class TimeTable extends AppCompatActivity {
         });
     }
 
-    static class Image{
-        private String image;
-
-        public Image() {
-        }
-
-        public Image(String image) {
-            this.image = image;
-        }
-
-        public String getImage() {
-            return image;
-        }
+    private void updateImage() {
+        String uri = (String) config.getString("timeTable");
+        PhotoView photoView = findViewById(R.id.timetable);
+        Picasso.get()
+                .load(uri)
+                .placeholder(R.drawable.uvce_vector_bw)
+                .into(photoView);
     }
 
     @Override

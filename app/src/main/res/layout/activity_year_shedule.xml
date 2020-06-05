@@ -21,8 +21,10 @@
             app:menu="@menu/home_button"/>
 
         <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/yearSchedule"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="fitXY"
             android:layout_below="@+id/tool_bar"/>
 
     </RelativeLayout>

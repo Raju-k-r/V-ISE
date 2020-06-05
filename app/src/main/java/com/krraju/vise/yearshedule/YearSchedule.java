@@ -13,7 +13,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.github.chrisbanes.photoview.PhotoView;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.krraju.vise.R;
 import com.krraju.vise.attendancemanager.AttendanceManager;
 import com.krraju.vise.cgpacalculator.CGPACalculator;
@@ -21,8 +25,11 @@ import com.krraju.vise.homescreen.HomeScreen;
 import com.krraju.vise.notes.NotesActivity;
 import com.krraju.vise.syllabus.Syllabus;
 import com.krraju.vise.timetable.TimeTable;
+import com.squareup.picasso.Picasso;
 
 public class YearSchedule extends AppCompatActivity {
+
+    private FirebaseRemoteConfig config;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,19 @@ public class YearSchedule extends AppCompatActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
+        config = FirebaseRemoteConfig.getInstance();
+
+        config.setConfigSettings(new FirebaseRemoteConfigSettings.Builder()
+                                     .setMinimumFetchIntervalInSeconds(3600)
+                                      .build());
+
+        config.fetch(0)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        updateImage();
+                    }
+                });
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()) {
                 case R.id.syllabus:
@@ -70,6 +90,15 @@ public class YearSchedule extends AppCompatActivity {
             }
             return true;
         });
+    }
+
+    private void updateImage() {
+        PhotoView photoView = findViewById(R.id.yearSchedule);
+        String uri = (String) config.getString("yearSchedule");
+        Picasso.get()
+                .load(uri)
+                .placeholder(R.drawable.uvce_vector_bw)
+                .into(photoView);
     }
 
     @Override
